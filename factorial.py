@@ -1,14 +1,19 @@
-def fact_rec(n, s):
-    a = []
-    if (n == 0 or n == 1) and (s == 1 or s > 6):
-        return 1
+chisla = []
+
+def recusia(n, s, start):
+
+    if (start == s):
+        return
     else:
-        b = fact_rec(n ** (s), s - 1)
-        a.append(b)
-        return a
+        chislo = n ** start
+        chisla.append(chislo)
+        start += 1
+        recusia(n, s, start)
+        return chisla
 
 
-print(fact_rec(2, 5))
+
+print(recusia(2, 5, 1))
 
 
 
